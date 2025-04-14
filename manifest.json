@@ -1,0 +1,19 @@
+{
+  "manifest_version": 2,
+  "name": "Facebook Image & Video Blur",
+  "version": "1.0",
+  "description": "Blur Facebook media until clicked. Toggle on/off.",
+  "permissions": ["storage", "activeTab"],
+  "browser_action": {
+    "default_popup": "popup.html",
+    "default_icon": "icon.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.facebook.com/*"],
+      "exclude_matches": ["*://*.facebook.com/messages*"],
+      "js": ["content.js"],
+      "css": ["styles.css"]
+    }
+  ]
+}

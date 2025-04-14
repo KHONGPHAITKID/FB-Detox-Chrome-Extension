@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>FB Media Blur Toggle</title>
+  <style>
+    /* Basic reset and font styling */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      min-width: 240px;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #29323c, #485563);
+      color: #f0f0f0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 200px;
+      padding: 20px;
+    }
+    h1 {
+      font-size: 18px;
+      margin-bottom: 15px;
+      font-weight: 600;
+    }
+
+    /* Custom toggle switch styles */
+    .toggle-container {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      padding: 10px;
+      background: rgba(0, 0, 0, 0.2);
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+      transition: transform 0.3s ease;
+    }
+    .toggle-container:hover {
+      transform: scale(1.02);
+    }
+    .toggle-label {
+      font-size: 16px;
+      flex-grow: 1;
+    }
+    .switch {
+      position: relative;
+      display: inline-block;
+      width: 60px;
+      height: 30px;
+    }
+    .switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #ccc;
+      border-radius: 30px;
+      transition: background-color 0.4s;
+    }
+    .slider::before {
+      position: absolute;
+      content: "";
+      height: 24px;
+      width: 24px;
+      left: 3px;
+      bottom: 3px;
+      background-color: #fff;
+      border-radius: 50%;
+      transition: transform 0.4s;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    }
+    input:checked + .slider {
+      background-color: #66bb6a;
+    }
+    input:checked + .slider::before {
+      transform: translateX(30px);
+    }
+    /* Popup container aesthetics */
+    .popup-container {
+      width: 100%;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="popup-container">
+    <h1>Media Blur Settings</h1>
+    <div class="toggle-container">
+      <span class="toggle-label">Enable Blur</span>
+      <label class="switch">
+        <input type="checkbox" id="toggleBlur">
+        <span class="slider"></span>
+      </label>
+    </div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>

@@ -1,0 +1,7 @@
+.fb-blurred {
+    filter: blur(15px);
+    transition: filter 0.3s ease;
+    cursor: pointer;
+    pointer-events: auto !important;
+  }
+  
